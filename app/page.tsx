@@ -226,8 +226,18 @@ export default function Home() {
             </FadeIn>
             <FadeIn delay={150}>
               <div className="bg-white/5 border border-white/10 rounded-2xl p-8 md:p-10 backdrop-blur-sm hover:border-fuchsia-500/30 transition-colors duration-500">
-                <p className="text-lg leading-relaxed text-gray-300 mb-6">I'm <span className="text-white font-semibold">Blessing Veronica</span>, a passionate front-end developer from Lagos, Nigeria. I started with HTML, CSS, and JavaScript, and fell in love with building beautiful, interactive websites.</p>
-                <p className="text-lg leading-relaxed text-gray-300">I'm currently deepening my skills with <span className="text-fuchsia-400 font-medium">React</span>, <span className="text-cyan-400 font-medium">Next.js</span>, and <span className="text-violet-400 font-medium">Tailwind CSS</span>. My goal is to craft clean, fast, responsive, and memorable web experiences.</p>
+                <p className="text-lg leading-relaxed text-gray-300 mb-6">
+                  I&apos;m <span className="text-white font-semibold">Blessing Veronica</span>, a front-end developer based in Lagos, Nigeria, focused on building clean, responsive, and user-centered web applications.
+                </p>
+                <p className="text-lg leading-relaxed text-gray-300 mb-6">
+                  I work with modern web technologies including HTML, CSS, JavaScript,{" "}
+                  <span className="text-fuchsia-400 font-medium">React</span>,{" "}
+                  <span className="text-cyan-400 font-medium">Next.js</span>, and{" "}
+                  <span className="text-violet-400 font-medium">Tailwind CSS</span> to create fast, scalable, and visually refined interfaces.
+                </p>
+                <p className="text-lg leading-relaxed text-gray-300">
+                  I&apos;m passionate about turning ideas into functional digital products, with a strong focus on usability, performance, and attention to detail. I&apos;m continuously improving my skills through hands-on projects and real-world development experience.
+                </p>
               </div>
             </FadeIn>
           </section>
