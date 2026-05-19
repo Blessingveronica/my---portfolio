@@ -126,18 +126,19 @@ export default function Home() {
 
   const projects = [
     {
+      title: "GitHub Profile Finder",
+      desc: "Search any GitHub user and explore their repositories, stats, and activity.",
+      tags: ["Next.js", "React", "GitHub API", "Tailwind CSS"],
+      image: "/github-finder-cover.png",
+      gradient: "from-cyan-500 to-fuchsia-500",
+      demo: "https://github-finder-seven-silk.vercel.app/",
+      github: "https://github.com/Blessingveronica/github-finder",
+    },
+    {
       title: "Personal Landing Page",
       desc: "A responsive single-page site built with HTML, CSS, and JavaScript.",
       tags: ["HTML", "CSS", "JavaScript"],
       gradient: "from-violet-500 to-fuchsia-500",
-      demo: "#",
-      github: "#",
-    },
-    {
-      title: "Coming Soon",
-      desc: "More exciting projects are on the way. Stay tuned!",
-      tags: ["React", "Next.js"],
-      gradient: "from-cyan-500 to-blue-500",
       demo: "#",
       github: "#",
     },
@@ -258,9 +259,22 @@ export default function Home() {
               {projects.map((p, i) => (
                 <FadeIn key={p.title} delay={i * 150}>
                   <div className="group bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:border-fuchsia-500/40 hover:-translate-y-2 transition-all duration-300 h-full">
-                    <div className={`h-44 bg-gradient-to-br ${p.gradient} opacity-80 group-hover:opacity-100 transition-opacity duration-300 relative`}>
-                      <div className="absolute inset-0 bg-black/20" />
-                      <div className="absolute bottom-4 left-4 text-white/60 text-xs uppercase tracking-widest font-medium">Project</div>
+                    <div className="h-44 relative overflow-hidden">
+                      {"image" in p && p.image ? (
+                        <Image
+                          src={p.image}
+                          alt={`${p.title} screenshot`}
+                          fill
+                          className="object-cover object-top group-hover:scale-105 transition-transform duration-300"
+                          sizes="(max-width: 768px) 100vw, 50vw"
+                        />
+                      ) : (
+                        <div className={`h-full bg-gradient-to-br ${p.gradient} opacity-80 group-hover:opacity-100 transition-opacity duration-300`} />
+                      )}
+                      <div className="absolute inset-0 bg-black/20 pointer-events-none" />
+                      <div className="absolute bottom-4 left-4 text-white/60 text-xs uppercase tracking-widest font-medium">
+                        Project
+                      </div>
                     </div>
                     <div className="p-6">
                       <h3 className="text-lg font-bold text-white mb-2">{p.title}</h3>
@@ -269,8 +283,26 @@ export default function Home() {
                         {p.tags.map((tag) => (<span key={tag} className="px-3 py-1 rounded-full bg-white/10 text-gray-300 text-xs font-medium">{tag}</span>))}
                       </div>
                       <div className="flex gap-4 text-sm">
-                        <a href={p.demo} className="text-fuchsia-400 hover:text-fuchsia-300 transition-colors">Live Demo ↗</a>
-                        <a href={p.github} className="text-gray-400 hover:text-white transition-colors">GitHub ↗</a>
+                        {p.demo !== "#" && (
+                          <a
+                            href={p.demo}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-fuchsia-400 hover:text-fuchsia-300 transition-colors"
+                          >
+                            Live Demo ↗
+                          </a>
+                        )}
+                        {p.github !== "#" && (
+                          <a
+                            href={p.github}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-gray-400 hover:text-white transition-colors"
+                          >
+                            GitHub ↗
+                          </a>
+                        )}
                       </div>
                     </div>
                   </div>
